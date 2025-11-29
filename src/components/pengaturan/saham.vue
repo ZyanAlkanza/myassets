@@ -2,7 +2,7 @@
   <div>
     <div class="flex flex-row justify-between items-center">
       <div class="py-4 font-medium">Saham</div>
-      <button class="btn btn-sm bg-primary">
+      <button class="btn btn-sm bg-primary" onclick="tambahSahamDialog.showModal()">
         <i class="ri-add-line ri-lg"></i>
         Tambah
       </button>
@@ -36,5 +36,25 @@
         </tbody>
       </table>
     </div>
+
+    <dialog id="tambahSahamDialog" class="modal">
+      <div class="modal-box">
+        <div class="font-semibold mb-8">Tambah Saham</div>
+        <form method="dialog">
+          <button class="btn btn-sm btn-circle btn-ghost absolute right-4 top-5">✕</button>
+        </form>
+        <tambahSaham/>
+      </div>
+    </dialog>
   </div>
 </template>
+
+<script>
+import tambahSaham from './saham/tambahSaham.vue';
+
+export default {
+  components: {
+    tambahSaham
+  }
+}
+</script>

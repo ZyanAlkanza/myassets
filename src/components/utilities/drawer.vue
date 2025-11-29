@@ -8,6 +8,7 @@
           <label for="my-drawer-4" aria-label="open sidebar" class="btn btn-square btn-ghost">
             <i class="ri-menu-line ri-lg"></i>
           </label>
+          <span class="font-semibold" style="text-transform: capitalize;">{{ this.$route.name }}</span>
         </nav>
 
         <!-- Content -->

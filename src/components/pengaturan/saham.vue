@@ -25,7 +25,7 @@
             <td class="text-center">SIDO</td>
             <td>Farmasi & Kesehatan</td>
             <td class="text-center">
-              <button class="btn btn-sm btn-soft btn-primary mr-1 tooltip tooltip-left" data-tip="Edit Data">
+              <button class="btn btn-sm btn-soft btn-primary mr-1 tooltip tooltip-left" data-tip="Edit Data" onclick="editSahamDialog.showModal()">
                 <i class="ri-edit-line ri-lg"></i>
               </button>
               <button class="btn btn-sm btn-soft btn-error ml-1 tooltip tooltip-left" data-tip="Hapus Data">
@@ -46,15 +46,27 @@
         <tambahSaham/>
       </div>
     </dialog>
+    
+    <dialog id="editSahamDialog" class="modal">
+      <div class="modal-box">
+        <div class="font-semibold mb-8">Edit Saham</div>
+        <form method="dialog">
+          <button class="btn btn-sm btn-circle btn-ghost absolute right-4 top-5">✕</button>
+        </form>
+        <editSaham/>
+      </div>
+    </dialog>
   </div>
 </template>
 
 <script>
 import tambahSaham from './saham/tambahSaham.vue';
+import editSaham from './saham/editSaham.vue';
 
 export default {
   components: {
-    tambahSaham
+    tambahSaham,
+    editSaham,
   }
 }
 </script>

@@ -28,7 +28,7 @@
               <button class="btn btn-sm btn-soft btn-primary mr-1 tooltip tooltip-left" data-tip="Edit Data" onclick="editSahamDialog.showModal()">
                 <i class="ri-edit-line ri-lg"></i>
               </button>
-              <button class="btn btn-sm btn-soft btn-error ml-1 tooltip tooltip-left" data-tip="Hapus Data">
+              <button class="btn btn-sm btn-soft btn-error ml-1 tooltip tooltip-left" data-tip="Hapus Data" onclick="hapusSahamDialog.showModal()">
                 <i class="ri-delete-bin-2-line ri-lg"></i>
               </button>
             </td>
@@ -56,17 +56,29 @@
         <editSaham/>
       </div>
     </dialog>
+    
+    <dialog id="hapusSahamDialog" class="modal">
+      <div class="modal-box">
+        <div class="font-semibold mb-8">Hapus Saham</div>
+        <form method="dialog">
+          <button class="btn btn-sm btn-circle btn-ghost absolute right-4 top-5">✕</button>
+        </form>
+        <hapusSaham />
+      </div>
+    </dialog>
   </div>
 </template>
 
 <script>
 import tambahSaham from './saham/tambahSaham.vue';
 import editSaham from './saham/editSaham.vue';
+import hapusSaham from './saham/hapusSaham.vue';
 
 export default {
   components: {
     tambahSaham,
     editSaham,
+    hapusSaham,
   }
 }
 </script>

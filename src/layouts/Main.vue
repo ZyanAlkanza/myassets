@@ -2,15 +2,18 @@
   <div style="font-family: 'Plus Jakarta Sans', sans-serif">
     <q-layout view="lHh Lpr lff">
       <q-header class="q-pt-md bg-white">
-        <q-toolbar>
+        <q-toolbar :class="drawer ? 'q-pl-none' : ''">
           <q-btn
+            :style="drawer ? 'margin-left: -15px' : ''"
             flat
             @click="drawer = !drawer"
-            round
             dense
+            class="bg-grey-3"
             color="black"
-            icon="menu"
-          />
+          >
+            <i v-if="drawer" class="ri-arrow-left-s-line ri-xl"></i>
+            <i v-else class="ri-arrow-right-s-line ri-xl"></i>
+          </q-btn>
         </q-toolbar>
       </q-header>
 
@@ -35,29 +38,31 @@
               <span class="q-px-sm" style="font-size: 24px">MyAssets</span>
             </q-item>
 
-            <q-item clickable v-ripple to="/beranda" tag="router-link">
-              <q-item-section avatar><q-icon name="o_home" /></q-item-section>
+            <q-item active clickable v-ripple to="/beranda" tag="router-link">
+              <q-item-section avatar>
+                <i class="ri-home-line ri-xl"></i>
+              </q-item-section>
               <q-item-section>Beranda</q-item-section>
             </q-item>
 
             <q-item clickable v-ripple to="/saham" tag="router-link">
-              <q-item-section avatar
-                ><q-icon name="o_candlestick_chart"
-              /></q-item-section>
+              <q-item-section avatar>
+                <i class="ri-stock-line ri-xl"></i>
+              </q-item-section>
               <q-item-section>Saham</q-item-section>
             </q-item>
 
             <q-item clickable v-ripple to="/cyrpto" tag="router-link">
-              <q-item-section avatar
-                ><q-icon name="o_currency_bitcoin"
-              /></q-item-section>
+              <q-item-section avatar>
+                <i class="ri-btc-line ri-xl"></i>
+              </q-item-section>
               <q-item-section>Cyrpto</q-item-section>
             </q-item>
 
             <q-item clickable v-ripple to="/emas" tag="router-link">
-              <q-item-section avatar
-                ><q-icon name="o_diamond"
-              /></q-item-section>
+              <q-item-section avatar>
+                <i class="ri-copper-diamond-line ri-xl"></i>
+              </q-item-section>
               <q-item-section>Emas</q-item-section>
             </q-item>
           </q-list>
@@ -72,17 +77,17 @@
               to="/pengaturan"
               tag="router-link"
             >
-              <q-item-section avatar
-                ><q-icon name="o_settings"
-              /></q-item-section>
+              <q-item-section avatar>
+                <i class="ri-settings-line ri-xl"></i>
+              </q-item-section>
               <q-item-section>Pengaturan</q-item-section>
             </q-item>
 
             <q-item clickable v-ripple to="/login" tag="router-link">
               <q-item-section avatar>
-                <q-icon name="o_logout" color="negative" />
+                <i class="ri-login-box-line ri-xl text-red"></i>
               </q-item-section>
-              <q-item-section class="text-negative">Keluar</q-item-section>
+              <q-item-section class="text-red">Keluar</q-item-section>
             </q-item>
           </q-list>
         </div>

@@ -1,23 +1,44 @@
 {
-  "name": "myasset",
+  "name": "myassets",
+  "version": "0.0.1",
+  "description": "a digital assets management",
+  "productName": "MyAssets | Digital Assets Management",
+  "author": "ZyanAlkanza <zyan.mujaddid@gmail.com>",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "test": "echo \"No test specified\" && exit 0",
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "postinstall": "quasar prepare"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.17",
-    "daisyui": "^5.5.5",
-    "remixicon": "^4.7.0",
-    "tailwindcss": "^4.1.17",
-    "vue": "^3.5.24",
-    "vue-router": "^4.6.3"
+    "axios": "^1.2.1",
+    "pinia": "^3.0.1",
+    "@quasar/extras": "^1.16.4",
+    "core-js": "^3.31.1",
+    "quasar": "^2.16.0",
+    "vue": "^3.5.22",
+    "vue-router": "^4.0.12"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^6.0.1",
-    "vite": "^7.2.2"
+    "@quasar/app-webpack": "^4.1.0",
+    "autoprefixer": "^10.4.2"
+  },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": "^28 || ^26 || ^24 || ^22 || ^20 || ^18",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
   }
 }

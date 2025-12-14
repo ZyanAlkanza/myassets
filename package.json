@@ -2,7 +2,7 @@
   "name": "myassets",
   "version": "0.0.1",
   "description": "a digital assets management",
-  "productName": "myassets",
+  "productName": "MyAssets | Digital Assets Management",
   "author": "ZyanAlkanza <zyan.mujaddid@gmail.com>",
   "private": true,
   "type": "module",

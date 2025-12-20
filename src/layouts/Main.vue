@@ -14,6 +14,7 @@
             <i v-if="drawer" class="ri-arrow-left-s-line ri-xl"></i>
             <i v-else class="ri-arrow-right-s-line ri-xl"></i>
           </q-btn>
+          <span class="text-h6 text-black q-px-md">{{ $route.name }}</span>
         </q-toolbar>
       </q-header>
 
@@ -38,28 +39,52 @@
               <span class="q-px-sm" style="font-size: 24px">MyAssets</span>
             </q-item>
 
-            <q-item active clickable v-ripple to="/beranda" tag="router-link">
+            <q-item
+              :class="$route.name === 'Beranda' ? 'text-primary' : 'text-black'"
+              clickable
+              v-ripple
+              to="/beranda"
+              tag="router-link"
+            >
               <q-item-section avatar>
                 <i class="ri-home-line ri-xl"></i>
               </q-item-section>
               <q-item-section>Beranda</q-item-section>
             </q-item>
 
-            <q-item clickable v-ripple to="/saham" tag="router-link">
+            <q-item
+              :class="$route.name === 'Saham' ? 'text-primary' : 'text-black'"
+              clickable
+              v-ripple
+              to="/saham"
+              tag="router-link"
+            >
               <q-item-section avatar>
                 <i class="ri-stock-line ri-xl"></i>
               </q-item-section>
               <q-item-section>Saham</q-item-section>
             </q-item>
 
-            <q-item clickable v-ripple to="/cyrpto" tag="router-link">
+            <q-item
+              :class="$route.name === 'Crypto' ? 'text-primary' : 'text-black'"
+              clickable
+              v-ripple
+              to="/cyrpto"
+              tag="router-link"
+            >
               <q-item-section avatar>
                 <i class="ri-btc-line ri-xl"></i>
               </q-item-section>
               <q-item-section>Cyrpto</q-item-section>
             </q-item>
 
-            <q-item clickable v-ripple to="/emas" tag="router-link">
+            <q-item
+              :class="$route.name === 'Emas' ? 'text-primary' : 'text-black'"
+              clickable
+              v-ripple
+              to="/emas"
+              tag="router-link"
+            >
               <q-item-section avatar>
                 <i class="ri-copper-diamond-line ri-xl"></i>
               </q-item-section>
@@ -71,7 +96,9 @@
 
           <q-list>
             <q-item
-              class="text-black"
+              :class="
+                $route.name === 'Pengaturan' ? 'text-primary' : 'text-black'
+              "
               clickable
               v-ripple
               to="/pengaturan"
@@ -94,7 +121,9 @@
       </q-drawer>
 
       <q-page-container>
-        <q-page padding> </q-page>
+        <q-page>
+          <router-view />
+        </q-page>
       </q-page-container>
     </q-layout>
   </div>
@@ -107,5 +136,6 @@ export default {
       drawer: false,
     };
   },
+  methods: {},
 };
 </script>

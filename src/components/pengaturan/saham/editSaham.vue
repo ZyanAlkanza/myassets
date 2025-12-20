@@ -1,34 +1,57 @@
 <template>
   <div>
-    <form class="flex flex-wrap">
-      <div class="w-full pb-2">
-        <label class="input validator w-full">
-          <i class="ri-building-2-line ri-lg"></i>
-          <input required v-model="form.nama_emiten" type="text" class="grow w-full" placeholder="Nama Emiten" />
-        </label>
-        <small class="pl-1 text-xs text-red-500 validator-hint hidden">Wajib diisi</small>
+    <q-form class="row q-col-gutter-sm" @onSubmit="simpan">
+      <div class="col-8">
+        <q-input
+          dense
+          outlined
+          label="Nama Emiten"
+          v-model="form.emiten"
+          prefix="PT"
+          suffix="Tbk."
+          hide-bottom-space
+          lazy-rules
+          no-error-icon
+          :rules="[(val) => !!val || 'Nama emiten tidak boleh kosong']"
+        />
       </div>
-      <div class="w-1/3 pr-1">
-        <label class="input validator w-full">
-          <i class="ri-hashtag ri-lg"></i>
-          <input required v-model="form.kode_idx" type="text" class="grow w-full" placeholder="Kode IDX" @input="form.kode_idx = form.kode_idx.toUpperCase()"/>
-        </label>
-        <small class="pl-1 text-xs text-red-500 validator-hint hidden">Wajib diisi</small>
+      <div class="col-4">
+        <q-input
+          dense
+          outlined
+          label="Kode IDX"
+          v-model="form.kode"
+          mask="AAAA"
+          hide-bottom-space
+          lazy-rules
+          no-error-icon
+          :rules="[(val) => !!val || 'Kode IDX tidak boleh kosong']"
+        />
       </div>
-      <div class="w-2/3 pl-1">
-        <label class="input validator w-full">
-          <i class="ri-flag-line ri-lg"></i>
-          <input required v-model="form.sektor" type="text" class="grow w-full" placeholder="Sektor" />
-        </label>
-        <small class="pl-1 text-xs text-red-500 validator-hint hidden">Wajib diisi</small>
+      <div class="col-12">
+        <q-select
+          dense
+          outlined
+          label="Sektor"
+          v-model="form.sektor"
+          use-input
+          input-debounce="0"
+          @new-value="tambahOpsi"
+          :options="SektorOpsi"
+          @filter="filter"
+          hide-bottom-space
+          lazy-rules
+          no-error-icon
+          :rules="[(val) => !!val || 'Sektor tidak boleh kosong']"
+        />
       </div>
-      <div class="w-full mt-4 text-right">
-        <button class="btn btn-md bg-primary" type="submit">
-          <i class="ri-save-line ri-lg"></i> 
-          Simpan
-        </button>
+      <div class="col-12 q-pt-md text-right">
+        <q-btn unelevated no-caps color="primary" type="submit">
+          <i class="ri-check-line ri-lg"></i>
+          <div class="q-pl-sm">Simpan</div>
+        </q-btn>
       </div>
-    </form>
+    </q-form>
   </div>
 </template>
 
@@ -38,11 +61,15 @@ export default {
     return {
       loading: false,
       form: {
-        nama_emiten: '',
-        kode_idx: '',
-        sektor: '',
-      }
-    }
+        emiten: null,
+        kode: null,
+        sektor: null,
+      },
+    };
   },
-}
+  mounted() {},
+  methods: {
+    async simpan() {},
+  },
+};
 </script>

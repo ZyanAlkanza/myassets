@@ -9,11 +9,17 @@ const routes = [
   {
     path: "/",
     component: () => import("layouts/Main.vue"),
+    redirect: "/beranda",
     children: [
       {
         path: "beranda",
         name: "Beranda",
         component: () => import("components/Beranda.vue"),
+      },
+      {
+        path: "saham",
+        name: "Saham",
+        component: () => import("components/Saham.vue"),
       },
       {
         path: "pengaturan",

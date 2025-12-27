@@ -1,2 +1,5 @@
 /* app global css */
 @import "remixicon/fonts/remixicon.css";
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}

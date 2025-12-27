@@ -110,7 +110,7 @@
               <q-item-section>Pengaturan</q-item-section>
             </q-item>
 
-            <q-item clickable v-ripple to="/login" tag="router-link">
+            <q-item clickable v-ripple @click="keluar" tag="router-link">
               <q-item-section avatar>
                 <i class="ri-login-box-line ri-xl text-red"></i>
               </q-item-section>
@@ -136,6 +136,25 @@ export default {
       drawer: false,
     };
   },
-  methods: {},
+  methods: {
+    keluar() {
+      this.$q.dialog({
+        title: 'Keluar',
+        message: 'Apakah anda yakin ingin keluar?',
+        ok: {
+          flat: true,
+          label: 'Ya',
+          color: 'red'
+        },
+        cancel: {
+          flat: true,
+          label: 'Batal',
+          color: 'primary'
+        }
+      }).onOk(() => {
+        this.$router.push({ name: 'Login' })
+      })
+    }
+  },
 };
 </script>
